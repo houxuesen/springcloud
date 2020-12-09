@@ -1,0 +1,21 @@
+server:
+  port: 9080
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.136.128:8848
+    sentinel:
+      transport:
+        port: 9080
+        dashboard: 192.168.183.121:8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+feign:
+  sentinel:
+    enabled: true
